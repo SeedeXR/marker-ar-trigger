@@ -21,7 +21,7 @@
         <div> </div>
      </div>
     <a-scene embedded arjs>
-      <a-marker type='pattern' url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/SeedeXR/marker-ar-trigger/main/pattern-amanirenas-less-1000px.patt">
+      <a-marker type='pattern' url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/SeedeXR/marker-ar-trigger/main/pattern-amanirenas-less-1000px.patt" size="0.1355">
         <a-entity
           position="0 0 0"
           scale="0.05 0.05 0.05"
@@ -32,8 +32,9 @@
     </a-scene>
     <!-- script to animate the loader -->
     <script>
+        const loader = document.querySelector('.arjs-loader');
         const loaderText = document.querySelector('.arjs-loader div');
-        const text = 'Powered By Seede XR | Ar Experience Loading';
+        const text = 'AR Experience Loading ... Please Wait !!';
     
         anime.timeline({ loop: false })
             .add({
@@ -50,6 +51,10 @@
                     loaderText.innerHTML = text.slice(0, Math.round(text.length * anim.progress / 100));
                 },
             });
+    
+        document.querySelector('a-scene').addEventListener('arReady', function() {
+            loader.style.display = 'none'; // Hide the loader
+        });
     </script>
 </body>
 </html>
