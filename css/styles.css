@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.arjs-loader {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #0000ff, #800080, #ffd000, #00ffff, #ff8800);
+    background-size: 500% 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+.arjs-loader div {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2.5vw; /* Responsive font size */
+    padding: 10px; /* Add some padding */
+    max-width: 90%; /* Prevent text from overflowing */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .arjs-loader div {
+        font-size: 5vw; /* Adjust font size for smaller screens */
+    }
+}

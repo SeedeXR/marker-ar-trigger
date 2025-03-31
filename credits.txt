@@ -1,0 +1,2 @@
+https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
+https://gist.githubusercontent.com/nicolocarpignoli/93662c987a682fa43d167eb745aaefca/raw/f6491e2017988b16215d8e8c228ba19391b06428/index.html
